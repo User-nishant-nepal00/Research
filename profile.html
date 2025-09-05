@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professor Profile - EEC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="header-container">
+            <!-- EEC Logo -->
+            <div class="eec-logo">
+                <div class="logo-icon">
+                    <div class="logo-squares">
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                        <div class="square"></div>
+                    </div>
+                </div>
+                <div class="logo-text">EEC</div>
+            </div>
+
+            <!-- Title Section -->
+            <div class="title-section">
+                <h1 class="main-title">Professor Profile</h1>
+                <h2 class="subtitle">Details about our distinguished faculty member</h2>
+            </div>
+
+            <!-- College Logo -->
+            <div class="college-logo">
+                <div class="college-container">
+                    <div class="college-text">EEC</div>
+                    <div class="college-subtitle">
+                        EVEREST ENGINEERING<br/>
+                        COLLEGE
+                    </div>
+                    <div class="year">2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navigation">
+        <div class="nav-container">
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">HOME</a></li>
+                <li><a href="fund.html" class="nav-link">RESEARCH FUND GUIDELINES</a></li>
+                <li><a href="internal.html" class="nav-link">INTERNAL RESEARCH FUND</a></li>
+                <li><a href="rmc.html" class="nav-link">RMC GUIDELINES</a></li>
+                <li><a href="paper.html" class="nav-link">PAPERS</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Announcements Banner -->
+    <div class="announcements-banner">
+        <div class="announcements-container">
+            <span class="announcements-icon">👨‍🏫</span>
+            <span class="announcements-text">Meet our distinguished faculty members leading research initiatives at EEC</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="content-container">
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Journal Cover -->
+                <div class="journal-cover">
+                    <div class="cover-image">
+                        <div class="cover-header">
+                            <div class="issn">ISSN: 2345-6789</div>
+                        </div>
+                        <div class="cover-content">
+                            <div class="eec-text">EEC</div>
+                            <div class="journal-text">JOURNAL OF</div>
+                            <div class="applied-text">APPLIED</div>
+                            <div class="engineering-text">ENGINEERING</div>
+                            <div class="research-text">RESEARCH</div>
+                        </div>
+                        <div class="cover-details">
+                            <div class="volume">Volume 15 • Issue 2 • 2023</div>
+                            <div class="university-logo">
+                                <div class="uni-circle">E</div>
+                                <div class="uni-text">EVEREST UNIV.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Open Access -->
+                <div class="open-access">
+                    <div class="open-access-logo">
+                        <span class="oa-icon">🔓</span>
+                        OPEN ACCESS
+                    </div>
+                </div>
+
+                <!-- Editors Section -->
+                <div class="editors-section">
+                    <h3>Research Leadership</h3>
+                    <p><strong>Chairperson:</strong><br>Prof. Dr. Hari Krishna Shrestha<br>Civil Engineering Dept.</p>
+                    <p><strong>Coordinator:</strong><br>Dr. Shailesh Pandey<br>Computer Engineering Dept.</p>
+                    <p><strong>Contact:</strong><br>shailesh.pandey@eemc.edu.np<br>Sanepa-2, Lalitpur, Nepal</p>
+                </div>
+            </div>
+
+            <!-- Main Area -->
+            <div class="main-area">
+                <div class="content-card profile-card">
+                    <a id="prof-pic-link" href="#" target="_blank">
+                        <img id="prof-pic" class="profile-pic" src="default.png" alt="Professor Photo">
+                    </a>
+
+                    <h1 id="prof-name" style="font-size: 24px; color: #2c5aa0; margin-bottom: 10px;">Loading...</h1>
+                    <p id="prof-role" class="profile-meta"></p>
+                    <p style="font-size: 13px; margin: 8px 0;"><strong>Email:</strong> <span id="prof-email"></span></p>
+                    <p style="font-size: 13px; margin: 8px 0;"><strong>Address:</strong> <span id="prof-address"></span></p>
+                    <p style="font-size: 13px; margin: 8px 0;"><strong>LinkedIn:</strong> <a id="prof-linkedin" href="#" target="_blank" class="btn-link" style="margin: 0; padding: 4px 8px;">View Profile</a></p>
+                    <p><a id="prof-scholar" class="scholar-btn" href="#" target="_blank">Google Scholar Profile</a></p>
+
+                    <div class="profile-section">
+                        <h3>Education</h3>
+                        <ul id="prof-education"></ul>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Research Areas</h3>
+                        <ul id="prof-subjects"></ul>
+                    </div>
+
+                    <div class="profile-section">
+                        <h3>Articles Published</h3>
+                        <ul id="prof-articles"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <p>© 2023 Everest Engineering College. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Professor data
+        const professors = {
+            hks: {
+                name: "Prof. Dr. Hari Krishna Shrestha",
+                role: "Professor | Research Chairperson",
+                email: "hari@eemc.edu.np",
+                address: "Everest Engineering College, Sanepa-2, Lalitpur",
+                linkedin: "https://www.linkedin.com/in/hari-shrestha",
+                scholar: "https://scholar.google.com/citations?user=HKS_ID",
+                photo: "hari.jpg",
+                education: [
+                    "Ph.D. in Civil Engineering, Kyoto University",
+                    "M.Sc. in Structural Engineering, Tribhuvan University"
+                ],
+                subjects: [
+                    "Structural Engineering",
+                    "Earthquake Engineering",
+                    "Research Methodology"
+                ],
+                articles: [
+                    "Shrestha, H.K. (2023). Advances in Earthquake Resilience. Journal of Civil Structures.",
+                    "Shrestha, H.K. (2022). Reinforced Concrete Innovations. Nepal Engineering Review."
+                ]
+            },
+            sp: {
+                name: "Dr. Shailesh Pandey",
+                role: "Associate Professor | Research Coordinator",
+                email: "shailesh.pandey@eemc.edu.np",
+                address: "Everest Engineering College, Sanepa-2, Lalitpur",
+                linkedin: "https://www.linkedin.com/in/shailesh-pandey",
+                scholar: "https://scholar.google.com/citations?user=SP_ID",
+                photo: "shailesh.jpg",
+                education: [
+                    "Ph.D. in Computer Science, IIT Bombay",
+                    "M.Sc. in Computer Engineering, TU"
+                ],
+                subjects: [
+                    "Artificial Intelligence",
+                    "Natural Language Processing",
+                    "Computer Networks"
+                ],
+                articles: [
+                    "Pandey, S. (2023). Location-Based Measure for Relative Influence of Papers in NLP. ICAICCIT 2023.",
+                    "Pandey, S. (2022). Advances in Neural Language Models. International Journal of AI Research."
+                ]
+            }
+        };
+
+        // Profile loading functionality
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const profId = urlParams.get("id");
+
+            if (professors[profId]) {
+                const prof = professors[profId];
+
+                // Profile picture + link
+                document.getElementById("prof-pic").src = prof.photo || "default.png";
+                document.getElementById("prof-pic-link").href = prof.photo || "#";
+
+                // Basic info
+                document.getElementById("prof-name").textContent = prof.name;
+                document.getElementById("prof-role").textContent = prof.role;
+                document.getElementById("prof-email").textContent = prof.email;
+                document.getElementById("prof-address").textContent = prof.address;
+
+                // LinkedIn
+                document.getElementById("prof-linkedin").href = prof.linkedin;
+
+                // Google Scholar
+                const scholarBtn = document.getElementById("prof-scholar");
+                if (prof.scholar) {
+                    scholarBtn.href = prof.scholar;
+                    scholarBtn.style.display = "inline-block";
+                } else {
+                    scholarBtn.style.display = "none";
+                }
+
+                // Education
+                const eduList = document.getElementById("prof-education");
+                eduList.innerHTML = "";
+                prof.education.forEach(e => {
+                    const li = document.createElement("li");
+                    li.textContent = e;
+                    eduList.appendChild(li);
+                });
+
+                // Subjects
+                const subjList = document.getElementById("prof-subjects");
+                subjList.innerHTML = "";
+                prof.subjects.forEach(s => {
+                    const li = document.createElement("li");
+                    li.textContent = s;
+                    subjList.appendChild(li);
+                });
+
+                // Articles
+                const artList = document.getElementById("prof-articles");
+                artList.innerHTML = "";
+                prof.articles.forEach(a => {
+                    const li = document.createElement("li");
+                    li.textContent = a;
+                    artList.appendChild(li);
+                });
+            } else {
+                document.querySelector(".main-area").innerHTML = "<div class='content-card'><p>Professor not found.</p></div>";
+            }
+        });
+    </script>
+</body>
+</html>

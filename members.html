@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Research Members</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Extra styles for profile popup/section */
+    .profile-section {
+      display: none;
+      margin-top: 30px;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      background: #fff;
+    }
+    .profile-section.active {
+      display: block;
+    }
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .grid-cols-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+  </style>
+</head>
+<body>
+  <header class="hero">
+    <h1>Research Members</h1>
+    <p>Distinguished faculty and researchers of Everest Engineering College</p>
+  </header>
+
+  <div id="navbar"></div>
+  
+
+  <main class="wrap">
+    <div class="card">
+      <div class="logo-container">
+        <img src="College logo.png" alt="EEC Logo" class="logo">
+      </div>
+      <h3>Our Research Community</h3>
+      <p>Click on a member to view their profile.</p>
+      
+      <!-- Member Grid -->
+      <div class="grid grid-cols-3" style="margin-top: 20px;">
+        <article class="member" onclick="showProfile('hks')">
+          <div class="avatar-container"><div class="avatar">HKS</div></div>
+          <div class="member-content">
+            <h4>Prof. Dr. Hari Krishna Shrestha</h4>
+            <div class="meta">Professor | Research Chairperson</div>
+          </div>
+        </article>
+
+        <article class="member" onclick="showProfile('rkb')">
+          <div class="avatar-container"><div class="avatar">RKB</div></div>
+          <div class="member-content">
+            <h4>Dr. Ram Kaji Budhathoki</h4>
+            <div class="meta">Electronics, KU</div>
+          </div>
+        </article>
+
+        <article class="member" onclick="showProfile('ds')">
+          <div class="avatar-container"><div class="avatar">DS</div></div>
+          <div class="member-content">
+            <h4>Dr. Dinesh Sukamani</h4>
+            <div class="meta">NEC</div>
+          </div>
+        </article>
+
+        <article class="member" onclick="showProfile('rs')">
+          <div class="avatar-container"><div class="avatar">RS</div></div>
+          <div class="member-content">
+            <h4>Dr. Rekha Shrestha</h4>
+            <div class="meta">Dean, Manmohan Tech. Univ.</div>
+          </div>
+        </article>
+
+        <article class="member" onclick="showProfile('ab')">
+          <div class="avatar-container"><div class="avatar">AB</div></div>
+          <div class="member-content">
+            <h4>Dr. Arun Bhandari</h4>
+            <div class="meta">Details later</div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Profile Display Section -->
+      <section id="profile" class="profile-section">
+        <img id="prof-pic" src="default.png" alt="Professor Photo" class="profile-pic">
+        <h2 id="prof-name">Select a member</h2>
+        <p id="prof-role"></p>
+        <p><strong>Email:</strong> <span id="prof-email"></span></p>
+        <p><strong>Address:</strong> <span id="prof-address"></span></p>
+        <p><strong>LinkedIn:</strong> <a id="prof-linkedin" href="#" target="_blank">Profile</a></p>
+        <p><a id="prof-scholar" href="#" target="_blank">Google Scholar</a></p>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>© 2023 Everest Engineering College. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="navbar.js">
+    const profiles = {
+      hks: {
+        name: "Prof. Dr. Hari Krishna Shrestha",
+        role: "Professor | Research Chairperson",
+        email: "hari@eemc.edu.np",
+        address: "Everest Engineering College",
+        linkedin: "#",
+        pic: "hari.png"
+      },
+      rkb: {
+        name: "Dr. Ram Kaji Budhathoki",
+        role: "Electronics, KU",
+        email: "ram.budhathoki@ku.edu.np",
+        address: "Kathmandu University",
+        linkedin: "#",
+        pic: "ram.png"
+      },
+      ds: {
+        name: "Dr. Dinesh Sukamani",
+        role: "NEC",
+        email: "dineshs@nec.edu.np",
+        address: "Nepal Engineering College",
+        linkedin: "#",
+        pic: "dinesh.png"
+      },
+      rs: {
+        name: "Dr. Rekha Shrestha",
+        role: "Dean, Manmohan Tech. Univ.",
+        email: "",
+        address: "Manmohan Technical University",
+        linkedin: "#",
+        pic: "rekha.png"
+      },
+      ab: {
+        name: "Dr. Arun Bhandari",
+        role: "Details will be provided later",
+        email: "",
+        address: "",
+        linkedin: "#",
+        pic: "default.png"
+      }
+    };
+
+    function showProfile(id) {
+      const p = profiles[id];
+      if (!p) return;
+
+      document.getElementById("prof-pic").src = p.pic;
+      document.getElementById("prof-name").textContent = p.name;
+      document.getElementById("prof-role").textContent = p.role;
+      document.getElementById("prof-email").textContent = p.email;
+      document.getElementById("prof-address").textContent = p.address;
+      document.getElementById("prof-linkedin").href = p.linkedin;
+      document.getElementById("prof-scholar").href = p.scholar;
+
+      document.getElementById("profile").classList.add("active");
+      document.getElementById("profile").scrollIntoView({ behavior: "smooth" });
+    }
+  </script>
+</body>
+</html>

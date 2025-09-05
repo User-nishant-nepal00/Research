@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li><a href="index.html" class="nav-link">HOME</a></li>
+        <li><a href="fund.html" class="nav-link">RESEARCH FUND GUIDELINES</a></li>
+        <li><a href="internal.html" class="nav-link">INTERNAL RESEARCH FUND</a></li>
+        <li><a href="rmc.html" class="nav-link">RMC GUIDELINES</a></li>
+        <li><a href="paper.html" class="nav-link active">PAPERS</a></li>
+    </ul>
+    </div>
+  </nav>
+  <script>
+  // Function to load HTML into an element
+  async function loadNavbar() {
+    const response = await fetch('navbar.html'); // path to navbar.html
+    const html = await response.text();
+    document.getElementById('navbar').innerHTML = html;
+
+    // Optional: highlight active link based on current page
+    const links = document.querySelectorAll('.nav-link');
+    const currentPage = window.location.pathname.split('/').pop();
+    links.forEach(link => {
+      if(link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      } else {
+        link.classList.remove('active');
+      }
+    });
+  }
+
+  loadNavbar();
+</script>
+</body>
+</html>
