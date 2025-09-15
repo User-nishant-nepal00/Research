@@ -25,7 +25,6 @@ A web platform for Everest Engineering College's Research Management Cell (RMC) 
 ## 👥 Faculty
 
 - **Prof. Dr. Hari Krishna Shrestha** - Research Chairperson (Civil Engineering)
-- **Dr. Shailesh Pandey** - Research Coordinator (AI/NLP)
 
 ## 🚀 Usage
 
@@ -42,9 +41,9 @@ A web platform for Everest Engineering College's Research Management Cell (RMC) 
 
 ## 📞 Contact
 
-**RMC Coordinator**: Dr. Shailesh B. Pandey  
-**Email**: shailesh.pandey@eemc.edu.np  
+**Research Chairperson**: Prof. Dr. Hari Krishna Shrestha  
+**Email**: hari@eemc.edu.np  
 **Location**: Everest Engineering College, Sanepa-2, Lalitpur
 
 ---
-© 2023 Everest Engineering College. All rights reserved.
+Everest Engineering College. All rights reserved.
