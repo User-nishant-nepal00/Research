@@ -23,17 +23,21 @@
       width: 80px;
       height: 80px;
       border-radius: 50%;
-      background: #007BFF;
-      color: #fff;
-      font-size: 28px;
-      font-weight: bold;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: cover;
       margin-right: 20px;
     }
     .profile-details p {
       margin: 8px 0;
+    }
+    .section-title {
+      margin-top: 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 5px;
+    }
+    ul {
+      margin: 10px 0 0 20px;
     }
     .btn-back {
       display: inline-block;
@@ -51,20 +55,17 @@
   </style>
 </head>
 <body>
-     <div class="header">
-        <div class="header-container">
-            <!-- EEC Logo -->
-            <div class="logo-container">
-                <img src="College logo.png" alt="EEC Logo" class="logo">
-            </div>
-
-            <!-- Title Section -->
-            <div class="title-section">
-                <h1 class="main-title">College members info</h1>
-                <h2 class="subtitle">Everest Engineering College Research Management Cell</h2>
-            </div>
+  <div class="header">
+    <div class="header-container">
+        <div class="logo-container">
+            <img src="College logo.png" alt="EEC Logo" class="logo">
+        </div>
+        <div class="title-section">
+            <h1 class="main-title">Research Members Info</h1>
+            <h2 class="subtitle">Everest Engineering College Research Management Cell</h2>
         </div>
     </div>
+  </div>
 
   <!-- Navbar -->
   <div id="navbar"></div>
@@ -72,7 +73,7 @@
 
   <div class="profile-container">
     <div class="profile-header">
-      <div id="avatar" class="profile-avatar">??</div>
+      <img id="avatar" class="profile-avatar" src="" alt="Member Photo">
       <div>
         <h2 id="name">Member Name</h2>
         <p id="position">Position</p>
@@ -80,61 +81,92 @@
     </div>
     <div class="profile-details">
       <p><strong>Email:</strong> <span id="email"></span></p>
-     <p style="font-size: 13px; margin: 8px 0;">
-  <strong>Phone:</strong> <span id="phone"></span>
-</p>
-
+      <p style="font-size: 13px; margin: 8px 0;"><strong>Phone:</strong> <span id="phone"></span></p>
       <p><strong>Specialization:</strong> <span id="specialization"></span></p>
     </div>
+
+    <!-- Academic Qualification -->
+    <div>
+      <p class="section-title">Academic Qualifications</p>
+      <ul id="qualifications"></ul>
+    </div>
+
+    <!-- Published Articles -->
+    <div>
+      <p class="section-title">Published Articles</p>
+      <ul id="articles"></ul>
+    </div>
+
     <a href="index.html" class="btn-back">← Back to Home</a>
   </div>
 
   <script>
-    // Member data (same as on homepage)
     const members = {
-      hks: {
-        name: "Prof. Dr. Hari Krishna Shrestha",
-        position: "Professor | Research Chairperson",
-        email: "hari@eemc.edu.np",
-        phone: "N/A",
-        specialization: "Civil Engineering",
-        avatar: "HKS"
+      hks: { 
+        name: "Prof. Dr. Hari Krishna Shrestha", 
+        position: "Professor | Research Chairperson", 
+        email: "hari@eemc.edu.np", 
+        phone: "9851006010", 
+        specialization: "Civil Engineering", 
+        avatar: "Hari.jpg",
+        qualifications: [
+          "Ph.D. in Civil Engineering, Tribhuvan University",
+          "M.Sc. in Structural Engineering",
+          "B.E. in Civil Engineering"
+        ],
+        articles: [
+          "Seismic Performance of Reinforced Concrete Buildings (2020)",
+          "Sustainable Construction Practices in Nepal (2022)"
+        ]
       },
-      ns: {
-        name: "Er. Narayan Sapkota",
-        position: "Faculty Member | Researcher",
-        email: "narayan.sapkota@eemc.edu.np",
-        phone: "9843152917",
-        specialization: "Civil Engineering",
-        avatar: "NS"
+      ns: { 
+        name: "Er. Narayan Sapkota", 
+        position: "Faculty Member | Researcher", 
+        email: "narayan.sapkota@eemc.edu.np", 
+        phone: "9843152917", 
+        specialization: "Civil Engineering", 
+        avatar: "narayan.jpeg",
+        qualifications: [
+          "M.Sc. in Civil Engineering",
+          "B.E. in Civil Engineering"
+        ],
+        articles: [
+          "Soil Stabilization Techniques (2021)",
+          "Bridge Design Innovations (2023)"
+        ]
       },
-      at: {
-        name: "Er. Anil Thapa",
-        position: "Faculty Member | Researcher",
-        email: "anil.thapa@eemc.edu.np",
-        phone: "9840012067",
-        specialization: "Electrical Engineering",
-        avatar: "AT"
+      at: { 
+        name: "Er. Anil Thapa", 
+        position: "Faculty Member | Researcher", 
+        email: "anil.thapa@eemc.edu.np", 
+        phone: "9840012067", 
+        specialization: "Electrical Engineering", 
+        avatar: "anil.jpeg",
+        qualifications: ["M.Sc. in Electrical Power Systems", "B.E. in Electrical Engineering"],
+        articles: ["Renewable Energy Integration in Nepal (2022)"]
       },
-      tm: {
-        name: "Er. Tripti Mahaseth",
-        position: "Faculty Member | Researcher",
-        email: "tripti.mahaseth@eemc.edu.np",
-        phone: "9848045289",
-        specialization: "Computer Engineering",
-        avatar: "TM"
+      tm: { 
+        name: "Er. Tripti Mahaseth", 
+        position: "Faculty Member | Researcher", 
+        email: "tripti.mahaseth@eemc.edu.np", 
+        phone: "9848045289", 
+        specialization: "Computer Engineering", 
+        avatar: "Tripti.jpeg",
+        qualifications: ["M.Sc. in Computer Engineering", "B.E. in Computer Engineering"],
+        articles: ["AI in Healthcare Systems (2023)"]
       },
-      bpg: {
-        name: "Er. Bed Prakash Gupta",
-        position: "Faculty Member | Researcher",
-        email: "bedp.gupta@eemc.edu.np",
-        phone: "9864420684",
-        specialization: "Mechanical Engineering",
-        avatar: "BPG"
+      bpg: { 
+        name: "Er. Bed Prakash Gupta", 
+        position: "Faculty Member | Researcher", 
+        email: "bedp.gupta@eemc.edu.np", 
+        phone: "9864420684", 
+        specialization: "Mechanical Engineering", 
+        avatar: "Bed.jpeg",
+        qualifications: ["M.Sc. in Mechanical Design", "B.E. in Mechanical Engineering"],
+        articles: ["Automation in Manufacturing (2021)"]
       }
     };
 
-    // Get ID from query string
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
 
@@ -147,7 +179,27 @@
         ? `<a href="tel:${member.phone}">${member.phone}</a>` 
         : "N/A";
       document.getElementById("specialization").textContent = member.specialization;
-      document.getElementById("avatar").textContent = member.avatar;
+      document.getElementById("avatar").src = member.avatar;
+      document.getElementById("avatar").alt = member.name;
+
+      // Qualifications
+      const qualList = document.getElementById("qualifications");
+      qualList.innerHTML = "";
+      (member.qualifications || []).forEach(q => {
+        const li = document.createElement("li");
+        li.textContent = q;
+        qualList.appendChild(li);
+      });
+
+      // Articles
+      const artList = document.getElementById("articles");
+      artList.innerHTML = "";
+      (member.articles || []).forEach(a => {
+        const li = document.createElement("li");
+        li.textContent = a;
+        artList.appendChild(li);
+      });
+
     } else {
       document.querySelector(".profile-container").innerHTML = "<h2>Profile not found</h2><a href='index.html' class='btn-back'>← Back to Home</a>";
     }

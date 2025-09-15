@@ -361,13 +361,12 @@ body {
 }
 
 .journal-info a {
-    color: gray;
-    text-decoration: underline;
+    color: blue;
     font-size: 12px;
 }
 
 .journal-info a:hover {
-    color: white;
+    color: blue;
 }
 
 /* Content Card */
@@ -434,8 +433,6 @@ body {
     margin-top: 10px;
     padding: 6px 12px;
     background: #2c5aa0;
-    color: blue;
-    font-size: 12px;
     text-decoration: none;
     border-radius: 6px;
     transition: background 0.3s ease;
